@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MindfulDay – Your AI-powered companion for mindfulness, focus and calm in everyday life.">
+  <title>MindfulDay – AI-Powered Mindfulness & Wellbeing Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="MindfulDay Home">
+        <span class="navbar__logo-icon"><i data-lucide="leaf" aria-hidden="true"></i></span>
+        MindfulDay
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="activities.html" class="navbar__link">Activities</a>
+        <a href="tracker.html" class="navbar__link">My MindfulDay</a>
+        <a href="resources.html" class="navbar__link">Resources</a>
+        <a href="about.html" class="navbar__link">About</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--sm" data-open-chatbot aria-label="Ask MindfulBot">
+          <i data-lucide="message-circle" aria-hidden="true"></i>
+          Ask MindfulBot
+        </button>
+        <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__mobile" role="menu">
+      <div class="navbar__mobile-links">
+        <a href="index.html" class="navbar__mobile-link" role="menuitem">Home</a>
+        <a href="activities.html" class="navbar__mobile-link" role="menuitem">Activities</a>
+        <a href="tracker.html" class="navbar__mobile-link" role="menuitem">My MindfulDay</a>
+        <a href="resources.html" class="navbar__mobile-link" role="menuitem">Resources</a>
+        <a href="about.html" class="navbar__mobile-link" role="menuitem">About</a>
+      </div>
+      <div class="navbar__mobile-actions">
+        <button class="btn btn--primary" data-open-chatbot>Ask MindfulBot</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content fade-in">
+            <span class="hero__badge">
+              <i data-lucide="sparkles" aria-hidden="true" style="width:14px;height:14px"></i>
+              AI-Powered Wellbeing
+            </span>
+            <h1 class="hero__title">Find Your Moment of Calm</h1>
+            <p class="hero__subtitle">MindfulDay is your simple AI-powered companion for creating small moments of mindfulness, focus and calm in everyday life.</p>
+            <div class="hero__actions">
+              <a href="activities.html" class="btn btn--primary btn--lg">Explore Activities</a>
+              <button class="btn btn--secondary btn--lg" data-open-chatbot>Ask MindfulBot</button>
+            </div>
+          </div>
+          <div class="hero__visual fade-in">
+            <div class="hero__illustration">
+              <div class="nature-visual" aria-hidden="true">
+                <div class="nature-visual__circle nature-visual__circle--1"></div>
+                <div class="nature-visual__circle nature-visual__circle--2"></div>
+                <div class="nature-visual__leaf"></div>
+                <div class="nature-visual__center">
+                  <i data-lucide="flower-2" style="width:48px;height:48px"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How MindfulDay Helps -->
+    <section class="section section--bg">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Features</span>
+          <h2>How MindfulDay Helps</h2>
+          <p>Simple tools designed for real moments in your everyday life.</p>
+        </div>
+        <div class="card-grid card-grid--4">
+          <div class="card fade-in">
+            <div class="card__icon"><i data-lucide="cloud" aria-hidden="true"></i></div>
+            <h3 class="card__title">Relax</h3>
+            <p class="card__text">Short mindfulness activities for moments when you want to slow down and unwind.</p>
+          </div>
+          <div class="card fade-in">
+            <div class="card__icon"><i data-lucide="target" aria-hidden="true"></i></div>
+            <h3 class="card__title">Focus</h3>
+            <p class="card__text">Simple exercises designed to help you take a mindful break and refocus your attention.</p>
+          </div>
+          <div class="card fade-in">
+            <div class="card__icon"><i data-lucide="wind" aria-hidden="true"></i></div>
+            <h3 class="card__title">Breathe</h3>
+            <p class="card__text">Short guided breathing activities with visual cues to help you find a steady rhythm.</p>
+          </div>
+          <div class="card fade-in">
+            <div class="card__icon"><i data-lucide="book-open" aria-hidden="true"></i></div>
+            <h3 class="card__title">Reflect</h3>
+            <p class="card__text">A simple private activity log for recording completed mindfulness activities and tracking progress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Choose What You Need -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Personalised</span>
+          <h2>Choose What You Need</h2>
+          <p>Select how you're feeling and we'll guide you to a suitable activity.</p>
+        </div>
+        <div class="need-grid">
+          <a href="activities.html?activity=mindful-pause" class="need-card fade-in">
+            <div class="need-card__icon"><i data-lucide="coffee" aria-hidden="true"></i></div>
+            <span class="need-card__label">I need a mindful break</span>
+          </a>
+          <a href="activities.html?activity=focus-reset" class="need-card fade-in">
+            <div class="need-card__icon"><i data-lucide="brain" aria-hidden="true"></i></div>
+            <span class="need-card__label">I want to focus</span>
+          </a>
+          <a href="activities.html?activity=body-awareness" class="need-card fade-in">
+            <div class="need-card__icon"><i data-lucide="moon" aria-hidden="true"></i></div>
+            <span class="need-card__label">I want to relax</span>
+          </a>
+          <a href="activities.html?activity=one-minute-breathing" class="need-card fade-in">
+            <div class="need-card__icon"><i data-lucide="wind" aria-hidden="true"></i></div>
+            <span class="need-card__label">I want a breathing exercise</span>
+          </a>
+          <a href="activities.html?activity=five-senses" class="need-card fade-in">
+            <div class="need-card__icon"><i data-lucide="compass" aria-hidden="true"></i></div>
+            <span class="need-card__label">I want to try something new</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Meet MindfulBot -->
+    <section class="section section--bg">
+      <div class="container">
+        <div class="bot-section">
+          <div class="bot-section__content fade-in">
+            <span class="section-label">AI Companion</span>
+            <h2>Meet MindfulBot</h2>
+            <p style="margin: 1rem 0 1.5rem;">Have a question or don't know where to start? Ask MindfulBot to help you discover a suitable mindfulness activity tailored to how you're feeling.</p>
+            <button class="btn btn--primary" data-open-chatbot>
+              <i data-lucide="message-circle" aria-hidden="true"></i>
+              Chat with MindfulBot
+            </button>
+          </div>
+          <div class="bot-section__visual fade-in" aria-hidden="true">
+            <div class="bot-section__icon">
+              <i data-lucide="bot" style="width:36px;height:36px"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tip of the Day & Weather -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Daily Inspiration</span>
+          <h2>Today's Mindful Moment</h2>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-card__icon"><i data-lucide="lightbulb" aria-hidden="true"></i></div>
+          <div class="tip-card__content">
+            <h3>Mindful Tip of the Day</h3>
+            <p id="tip-of-the-day">Loading tip...</p>
+          </div>
+        </div>
+        <div style="margin-top: 2rem;">
+          <div class="weather-widget fade-in" id="weather-widget">
+            <div class="weather-widget__icon">
+              <i data-lucide="cloud-sun" style="width:32px;height:32px" aria-hidden="true"></i>
+            </div>
+            <p class="weather-widget__message">Loading weather suggestion...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">MindfulDay</div>
+          <p class="footer__tagline">Small moments. More mindful days.</p>
+          <p class="footer__project-note">Built as an Artificial Intelligence & Automation final project.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link">Home</a>
+            <a href="activities.html" class="footer__link">Activities</a>
+            <a href="tracker.html" class="footer__link">Tracker</a>
+            <a href="resources.html" class="footer__link">Resources</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="about.html#contact" class="footer__link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <div class="footer__links">
+            <a href="resources.html" class="footer__link">Mindfulness Basics</a>
+            <a href="resources.html#videos" class="footer__link">Videos</a>
+            <a href="resources.html#audio" class="footer__link">Audio</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">MindfulDay provides general mindfulness and wellbeing information and is not a medical or diagnostic service.</p>
+        <p class="footer__copyright">&copy; 2026 MindfulDay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot FAB -->
+  <button class="chatbot-fab" id="chatbot-fab" aria-label="Open MindfulBot chat">
+    <span class="chatbot-fab__tooltip">Ask MindfulBot</span>
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+  </button>
+
+  <!-- BOTPRESS INTEGRATION GOES HERE -->
+  <div class="botpress-container" id="botpress-container"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/integrations.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

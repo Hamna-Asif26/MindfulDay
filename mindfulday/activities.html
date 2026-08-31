@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore mindfulness activities – breathing, focus, grounding, relaxation and reflection exercises on MindfulDay.">
+  <title>Mindfulness Activities – MindfulDay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="MindfulDay Home">
+        <span class="navbar__logo-icon"><i data-lucide="leaf" aria-hidden="true"></i></span>
+        MindfulDay
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="activities.html" class="navbar__link">Activities</a>
+        <a href="tracker.html" class="navbar__link">My MindfulDay</a>
+        <a href="resources.html" class="navbar__link">Resources</a>
+        <a href="about.html" class="navbar__link">About</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--sm" data-open-chatbot aria-label="Ask MindfulBot">
+          <i data-lucide="message-circle" aria-hidden="true"></i>
+          Ask MindfulBot
+        </button>
+        <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__mobile" role="menu">
+      <div class="navbar__mobile-links">
+        <a href="index.html" class="navbar__mobile-link" role="menuitem">Home</a>
+        <a href="activities.html" class="navbar__mobile-link" role="menuitem">Activities</a>
+        <a href="tracker.html" class="navbar__mobile-link" role="menuitem">My MindfulDay</a>
+        <a href="resources.html" class="navbar__mobile-link" role="menuitem">Resources</a>
+        <a href="about.html" class="navbar__mobile-link" role="menuitem">About</a>
+      </div>
+      <div class="navbar__mobile-actions">
+        <button class="btn btn--primary" data-open-chatbot>Ask MindfulBot</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="section-label">Activity Library</span>
+        <h1>Mindfulness Activities</h1>
+        <p>Take a few minutes for yourself. Choose an activity that fits your mood and schedule.</p>
+      </div>
+    </section>
+
+    <section class="section section--sm">
+      <div class="container">
+        <div class="activity-filters" role="tablist" aria-label="Filter activities by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="breathing" role="tab">Breathing</button>
+          <button class="filter-btn" data-filter="focus" role="tab">Focus</button>
+          <button class="filter-btn" data-filter="grounding" role="tab">Grounding</button>
+          <button class="filter-btn" data-filter="relaxation" role="tab">Relaxation</button>
+          <button class="filter-btn" data-filter="reflection" role="tab">Reflection</button>
+        </div>
+
+        <div class="card-grid" id="activities-grid">
+          <!-- Rendered by activities.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Activity Modal -->
+  <div class="modal-overlay" id="activity-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal__header">
+        <div>
+          <h2 class="modal__title" id="modal-title">Activity</h2>
+          <p class="modal__category"></p>
+        </div>
+        <button class="modal__close" aria-label="Close activity">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="modal__body">
+        <p class="modal__instructions"></p>
+
+        <!-- Breathing Guide -->
+        <div class="breathing-section hidden">
+          <div class="breathing-guide">
+            <div class="breathing-circle prepare" id="breathing-circle"></div>
+            <p class="breathing-guide__phase" id="breathing-phase">Prepare</p>
+            <p class="breathing-guide__instruction" id="breathing-instruction">Get comfortable and ready</p>
+          </div>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="timer-section">
+          <div class="timer-display">
+            <div class="timer-display__time" id="timer-time">5:00</div>
+            <div class="timer-display__label">Remaining</div>
+          </div>
+          <div class="timer-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+            <div class="timer-progress__bar" id="timer-progress-bar"></div>
+          </div>
+          <div class="timer-controls">
+            <button class="btn btn--primary" id="timer-start">Start</button>
+            <button class="btn btn--secondary" id="timer-pause">Pause</button>
+            <button class="btn btn--ghost" id="timer-reset">Reset</button>
+          </div>
+        </div>
+
+        <!-- Completion Section -->
+        <div class="completion-section hidden">
+          <div class="completion-message">
+            <div class="completion-message__icon">
+              <i data-lucide="check-circle" style="width:48px;height:48px" aria-hidden="true"></i>
+            </div>
+            <h3>Activity completed.</h3>
+            <p>Well done for taking time for yourself.</p>
+          </div>
+          <button class="btn btn--primary" id="save-to-log" style="width:100%">
+            <i data-lucide="plus-circle" aria-hidden="true"></i>
+            Add to My Activity Log
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">MindfulDay</div>
+          <p class="footer__tagline">Small moments. More mindful days.</p>
+          <p class="footer__project-note">Built as an Artificial Intelligence & Automation final project.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link">Home</a>
+            <a href="activities.html" class="footer__link">Activities</a>
+            <a href="tracker.html" class="footer__link">Tracker</a>
+            <a href="resources.html" class="footer__link">Resources</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="about.html#contact" class="footer__link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <div class="footer__links">
+            <a href="resources.html" class="footer__link">Mindfulness Basics</a>
+            <a href="resources.html#videos" class="footer__link">Videos</a>
+            <a href="resources.html#audio" class="footer__link">Audio</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">MindfulDay provides general mindfulness and wellbeing information and is not a medical or diagnostic service.</p>
+        <p class="footer__copyright">&copy; 2026 MindfulDay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chatbot-fab" id="chatbot-fab" aria-label="Open MindfulBot chat">
+    <span class="chatbot-fab__tooltip">Ask MindfulBot</span>
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+  </button>
+
+  <div class="botpress-container" id="botpress-container"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/integrations.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/activities.js"></script>
+</body>
+</html>
