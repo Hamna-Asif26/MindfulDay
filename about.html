@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About MindfulDay – an AI-powered mindfulness and wellbeing companion built as a final project.">
+  <title>About & Contact – MindfulDay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="MindfulDay Home">
+        <span class="navbar__logo-icon"><i data-lucide="leaf" aria-hidden="true"></i></span>
+        MindfulDay
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="activities.html" class="navbar__link">Activities</a>
+        <a href="tracker.html" class="navbar__link">My MindfulDay</a>
+        <a href="resources.html" class="navbar__link">Resources</a>
+        <a href="about.html" class="navbar__link">About</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--sm" data-open-chatbot aria-label="Ask MindfulBot">
+          <i data-lucide="message-circle" aria-hidden="true"></i>
+          Ask MindfulBot
+        </button>
+        <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__mobile" role="menu">
+      <div class="navbar__mobile-links">
+        <a href="index.html" class="navbar__mobile-link" role="menuitem">Home</a>
+        <a href="activities.html" class="navbar__mobile-link" role="menuitem">Activities</a>
+        <a href="tracker.html" class="navbar__mobile-link" role="menuitem">My MindfulDay</a>
+        <a href="resources.html" class="navbar__mobile-link" role="menuitem">Resources</a>
+        <a href="about.html" class="navbar__mobile-link" role="menuitem">About</a>
+      </div>
+      <div class="navbar__mobile-actions">
+        <button class="btn btn--primary" data-open-chatbot>Ask MindfulBot</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- About Hero -->
+    <section class="about-hero">
+      <div class="container fade-in">
+        <span class="section-label">About MindfulDay</span>
+        <h1>What is MindfulDay?</h1>
+        <p>MindfulDay was created as an AI and automation project to make simple mindfulness activities easier to discover and use in everyday life. It combines a modern website, AI chatbot, and automation features into one accessible platform.</p>
+        <div class="about-hero__media">
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=80" alt="A peaceful wellness scene with a calm person enjoying nature" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="section section--sm section--bg">
+      <div class="container">
+        <div class="problem-solution fade-in">
+          <div class="problem-solution__box">
+            <h3><i data-lucide="help-circle" aria-hidden="true" style="color:var(--color-sage)"></i> The Problem</h3>
+            <p>People often want to take a mindful break but don't know which activity to choose or where to begin. Without guidance, it's easy to skip these moments entirely.</p>
+          </div>
+          <div class="problem-solution__box">
+            <h3><i data-lucide="check-circle" aria-hidden="true" style="color:var(--color-sage)"></i> The Solution</h3>
+            <p>MindfulDay combines a modern website, AI chatbot and automation/integration features into one simple platform — helping you find and practice mindfulness activities that fit your moment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section--sm">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Architecture</span>
+          <h2>How It Works</h2>
+          <p>From your browser to automated wellbeing support.</p>
+        </div>
+        <div class="flow-diagram fade-in">
+          <div class="flow-step">Website</div>
+          <div class="flow-arrow"><i data-lucide="arrow-down" aria-hidden="true"></i></div>
+          <div class="flow-step">MindfulBot</div>
+          <div class="flow-arrow"><i data-lucide="arrow-down" aria-hidden="true"></i></div>
+          <div class="flow-step">Knowledge Base</div>
+          <div class="flow-arrow"><i data-lucide="arrow-down" aria-hidden="true"></i></div>
+          <div class="flow-step">Personalized Activity</div>
+          <div class="flow-arrow"><i data-lucide="arrow-down" aria-hidden="true"></i></div>
+          <div class="flow-step">Activity Tracker</div>
+          <div class="flow-arrow"><i data-lucide="arrow-down" aria-hidden="true"></i></div>
+          <div class="flow-step">External Integrations</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integrations Overview -->
+    <section class="section section--sm section--bg">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Connected Services</span>
+          <h2>Integrations</h2>
+          <p>MindfulDay is designed to connect with external services for a richer experience.</p>
+        </div>
+        <div class="card-grid fade-in">
+          <div class="card">
+            <div class="card__icon"><i data-lucide="bot" aria-hidden="true"></i></div>
+            <h3 class="card__title">Botpress AI</h3>
+            <p class="card__text">MindfulBot powered by Botpress with a Knowledge Base for conversational mindfulness guidance.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><i data-lucide="cloud-sun" aria-hidden="true"></i></div>
+            <h3 class="card__title">Weather API</h3>
+            <p class="card__text">Contextual suggestions for indoor or outdoor mindfulness based on local weather conditions.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><i data-lucide="music" aria-hidden="true"></i></div>
+            <h3 class="card__title">Spotify & YouTube</h3>
+            <p class="card__text">Embedded media resources for guided meditation, music, and educational content.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><i data-lucide="send" aria-hidden="true"></i></div>
+            <h3 class="card__title">Telegram</h3>
+            <p class="card__text">Daily mindfulness reminders and resource delivery via Telegram bot automation.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><i data-lucide="workflow" aria-hidden="true"></i></div>
+            <h3 class="card__title">Make.com / n8n</h3>
+            <p class="card__text">Webhook automation for activity logging, contact forms, and third-party service orchestration.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon"><i data-lucide="layout" aria-hidden="true"></i></div>
+            <h3 class="card__title">Notion / Trello</h3>
+            <p class="card__text">Optional activity records synced to project management tools via automation workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Get in Touch</span>
+          <h2>Contact & Feedback</h2>
+          <p>Have a question or suggestion? We'd love to hear from you.</p>
+        </div>
+        <form class="contact-form fade-in" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+            <span class="form-error">Please enter your name.</span>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
+            <span class="form-error">Please enter a valid email address.</span>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" placeholder="Your message or feedback..." required></textarea>
+            <span class="form-error">Please enter a message.</span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--lg" style="width:100%">
+            <span class="submit-text">Send Message</span>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">MindfulDay</div>
+          <p class="footer__tagline">Small moments. More mindful days.</p>
+          <p class="footer__project-note">Built as an Artificial Intelligence & Automation final project.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link">Home</a>
+            <a href="activities.html" class="footer__link">Activities</a>
+            <a href="tracker.html" class="footer__link">Tracker</a>
+            <a href="resources.html" class="footer__link">Resources</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="about.html#contact" class="footer__link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <div class="footer__links">
+            <a href="resources.html" class="footer__link">Mindfulness Basics</a>
+            <a href="resources.html#videos" class="footer__link">Videos</a>
+            <a href="resources.html#audio" class="footer__link">Audio</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">MindfulDay provides general mindfulness and wellbeing information and is not a medical or diagnostic service.</p>
+        <p class="footer__copyright">&copy; 2026 MindfulDay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chatbot-fab" id="chatbot-fab" aria-label="Open MindfulBot chat">
+    <span class="chatbot-fab__tooltip">Ask MindfulBot</span>
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+  </button>
+
+  <div class="botpress-container" id="botpress-container"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/integrations.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      let valid = true;
+
+      form.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
+
+      if (!name) {
+        form.querySelector('[name="name"]').closest('.form-group').classList.add('error');
+        valid = false;
+      }
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        form.querySelector('[name="email"]').closest('.form-group').classList.add('error');
+        valid = false;
+      }
+      if (!message) {
+        form.querySelector('[name="message"]').closest('.form-group').classList.add('error');
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      const submitBtn = form.querySelector('[type="submit"]');
+      const submitText = submitBtn.querySelector('.submit-text');
+      submitText.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      const result = await Integrations.sendContactForm({ name, email, message });
+
+      if (result.success) {
+        MindfulDay.showToast('Message sent successfully!', 'success');
+      } else {
+        MindfulDay.showToast('Message received locally. Webhook integration pending.', 'info');
+      }
+
+      form.reset();
+      submitText.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    });
+  </script>
+</body>
+</html>

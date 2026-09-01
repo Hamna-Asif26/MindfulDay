@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your mindfulness journey with MindfulDay – view completed activities, minutes practiced, and weekly progress.">
+  <title>My MindfulDay – Activity Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .chart-wrapper { height: 280px; position: relative; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="MindfulDay Home">
+        <span class="navbar__logo-icon"><i data-lucide="leaf" aria-hidden="true"></i></span>
+        MindfulDay
+      </a>
+      <div class="navbar__links">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="activities.html" class="navbar__link">Activities</a>
+        <a href="tracker.html" class="navbar__link">My MindfulDay</a>
+        <a href="resources.html" class="navbar__link">Resources</a>
+        <a href="about.html" class="navbar__link">About</a>
+      </div>
+      <div class="navbar__actions">
+        <button class="btn btn--ghost btn--sm" data-open-chatbot aria-label="Ask MindfulBot">
+          <i data-lucide="message-circle" aria-hidden="true"></i>
+          Ask MindfulBot
+        </button>
+        <button class="navbar__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i data-lucide="menu" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="navbar__mobile" role="menu">
+      <div class="navbar__mobile-links">
+        <a href="index.html" class="navbar__mobile-link" role="menuitem">Home</a>
+        <a href="activities.html" class="navbar__mobile-link" role="menuitem">Activities</a>
+        <a href="tracker.html" class="navbar__mobile-link" role="menuitem">My MindfulDay</a>
+        <a href="resources.html" class="navbar__mobile-link" role="menuitem">Resources</a>
+        <a href="about.html" class="navbar__mobile-link" role="menuitem">About</a>
+      </div>
+      <div class="navbar__mobile-actions">
+        <button class="btn btn--primary" data-open-chatbot>Ask MindfulBot</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="section-label">Your Dashboard</span>
+        <h1>My MindfulDay</h1>
+        <p>Track your mindfulness journey and celebrate your progress.</p>
+      </div>
+    </section>
+
+    <section class="section section--sm">
+      <div class="container">
+        <!-- Summary Stats -->
+        <div class="stats-grid fade-in">
+          <div class="stat-card">
+            <div class="stat-card__value" id="stat-completed">0</div>
+            <div class="stat-card__label">Activities Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value" id="stat-minutes">0</div>
+            <div class="stat-card__label">Minutes Practiced</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value" id="stat-favorite" style="font-size:1.25rem;">—</div>
+            <div class="stat-card__label">Favorite Activity</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value" id="stat-streak">0</div>
+            <div class="stat-card__label">Current Streak (days)</div>
+          </div>
+        </div>
+
+        <!-- Weekly Chart -->
+        <div class="chart-container fade-in">
+          <h3>Mindfulness Minutes This Week</h3>
+          <div class="chart-wrapper">
+            <canvas id="weekly-chart" aria-label="Bar chart showing mindfulness minutes per day this week"></canvas>
+          </div>
+        </div>
+
+        <div class="mindful-journey fade-in">
+          <img class="mindful-journey__image" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="A person enjoying a calming walk outdoors as part of their mindful journey" />
+          <div class="mindful-journey__content">
+            <div>
+              <span class="section-label">Your mindful journey</span>
+              <h3>Small steps. Steady calm.</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity History -->
+        <div class="history-section fade-in">
+          <div class="history-section__header">
+            <h3>Activity History</h3>
+            <div class="activity-filters" style="margin-bottom:0;">
+              <button class="filter-btn history-filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn history-filter-btn" data-filter="breathing">Breathing</button>
+              <button class="filter-btn history-filter-btn" data-filter="focus">Focus</button>
+              <button class="filter-btn history-filter-btn" data-filter="grounding">Grounding</button>
+              <button class="filter-btn history-filter-btn" data-filter="relaxation">Relaxation</button>
+              <button class="filter-btn history-filter-btn" data-filter="reflection">Reflection</button>
+            </div>
+          </div>
+
+          <div id="history-empty" class="history-empty hidden">
+            <p>No activities recorded yet. Complete an activity to start tracking your progress.</p>
+            <a href="activities.html" class="btn btn--primary">Explore Activities</a>
+          </div>
+
+          <table class="history-table" aria-label="Activity history">
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Duration</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body"></tbody>
+          </table>
+
+          <div class="history-cards" id="history-cards"></div>
+        </div>
+
+        <div style="text-align:center; margin-top: 2rem;">
+          <button class="btn btn--ghost" id="clear-history" style="color: var(--color-error);">
+            <i data-lucide="trash-2" aria-hidden="true"></i>
+            Clear Activity History
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">MindfulDay</div>
+          <p class="footer__tagline">Small moments. More mindful days.</p>
+          <p class="footer__project-note">Built as an Artificial Intelligence & Automation final project.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <div class="footer__links">
+            <a href="index.html" class="footer__link">Home</a>
+            <a href="activities.html" class="footer__link">Activities</a>
+            <a href="tracker.html" class="footer__link">Tracker</a>
+            <a href="resources.html" class="footer__link">Resources</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <div class="footer__links">
+            <a href="about.html" class="footer__link">About</a>
+            <a href="about.html#contact" class="footer__link">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Resources</h4>
+          <div class="footer__links">
+            <a href="resources.html" class="footer__link">Mindfulness Basics</a>
+            <a href="resources.html#videos" class="footer__link">Videos</a>
+            <a href="resources.html#audio" class="footer__link">Audio</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">MindfulDay provides general mindfulness and wellbeing information and is not a medical or diagnostic service.</p>
+        <p class="footer__copyright">&copy; 2026 MindfulDay. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="chatbot-fab" id="chatbot-fab" aria-label="Open MindfulBot chat">
+    <span class="chatbot-fab__tooltip">Ask MindfulBot</span>
+    <i data-lucide="message-circle" aria-hidden="true"></i>
+  </button>
+
+  <div class="botpress-container" id="botpress-container"></div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/integrations.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/tracker.js"></script>
+</body>
+</html>
