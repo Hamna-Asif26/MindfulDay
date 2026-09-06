@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script src="https://cdn.botpress.cloud/webchat/v3.7/inject.js"></script>
+  <script>window.botpress.init({botId:"9cb1352c-05f3-440c-bf41-5556b1ff7b4c",clientId:"a0302f51-9852-4229-b6bd-06a5e5c5dba1",configuration:{color:"#3D5A47",variant:"solid",themeMode:"light",additionalStylesheet:":host-context(.mindfulbot-open) .bpFabContainer{display:none!important}.bpHeaderContainer{background:#3D5A47!important}.bpHeaderContentAvatarContainer,.bpHeaderContentAvatarFallback{background:#3D5A47!important;color:#fff!important}.bpHeaderContentTitle{color:#fff!important}.bpHeaderContentActionsIcons button{background:#3D5A47!important;color:#fff!important}.bpMessageAvatarContainer,.bpMessageAvatarFallback,.bpMessageListMarqueeAvatarContainer,.bpMessageListMarqueeAvatarFallback,.bpMessagePreviewAvatarContainer,.bpMessagePreviewAvatarFallback{background:#3D5A47!important;color:#fff!important}.bpWebchat,.bpWebchatContainer{background:#fff!important}:host-context(.mindfulbot-fullscreen) .bpWebchat,:host-context(.mindfulbot-fullscreen) .bpWebchatContainer{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;bottom:0!important;right:0!important;background:#fff!important}"}});</script>
+  <script src="https://files.bpcontent.cloud/2026/07/19/09/20260719093118-NWPFK63J.js" defer></script>
 </head>
 <body>
 
@@ -123,24 +126,9 @@
             <p class="card__text">Contextual suggestions for indoor or outdoor mindfulness based on local weather conditions.</p>
           </div>
           <div class="card">
-            <div class="card__icon"><i data-lucide="music" aria-hidden="true"></i></div>
-            <h3 class="card__title">Spotify & YouTube</h3>
-            <p class="card__text">Embedded media resources for guided meditation, music, and educational content.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon"><i data-lucide="send" aria-hidden="true"></i></div>
-            <h3 class="card__title">Telegram</h3>
-            <p class="card__text">Daily mindfulness reminders and resource delivery via Telegram bot automation.</p>
-          </div>
-          <div class="card">
             <div class="card__icon"><i data-lucide="workflow" aria-hidden="true"></i></div>
             <h3 class="card__title">Make.com / n8n</h3>
             <p class="card__text">Webhook automation for activity logging, contact forms, and third-party service orchestration.</p>
-          </div>
-          <div class="card">
-            <div class="card__icon"><i data-lucide="layout" aria-hidden="true"></i></div>
-            <h3 class="card__title">Notion / Trello</h3>
-            <p class="card__text">Optional activity records synced to project management tools via automation workflows.</p>
           </div>
         </div>
       </div>
@@ -154,26 +142,31 @@
           <h2>Contact & Feedback</h2>
           <p>Have a question or suggestion? We'd love to hear from you.</p>
         </div>
-        <form class="contact-form fade-in" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
-            <span class="form-error">Please enter your name.</span>
-          </div>
-          <div class="form-group">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required autocomplete="email">
-            <span class="form-error">Please enter a valid email address.</span>
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="Your message or feedback..." required></textarea>
-            <span class="form-error">Please enter a message.</span>
-          </div>
-          <button type="submit" class="btn btn--primary btn--lg" style="width:100%">
-            <span class="submit-text">Send Message</span>
-          </button>
-        </form>
+        <div class="tally-form fade-in" aria-label="MindfulDay Feedback and Resource Form">
+          <iframe data-tally-src="https://tally.so/embed/xXqVdG?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="877" frameborder="0" marginheight="0" marginwidth="0" title="MindfulDay Feedback &amp; Resource Form"></iframe>
+          <script>
+            var d = document;
+            var w = 'https://tally.so/widgets/embed.js';
+            var v = function() {
+              if (typeof Tally !== 'undefined') {
+                Tally.loadEmbeds();
+              } else {
+                d.querySelectorAll('iframe[data-tally-src]:not([src])').forEach(function(iframe) {
+                  iframe.src = iframe.dataset.tallySrc;
+                });
+              }
+            };
+            if (typeof Tally !== 'undefined') {
+              v();
+            } else if (d.querySelector('script[src="' + w + '"]') === null) {
+              var s = d.createElement('script');
+              s.src = w;
+              s.onload = v;
+              s.onerror = v;
+              d.body.appendChild(s);
+            }
+          </script>
+        </div>
       </div>
     </section>
   </main>
@@ -229,50 +222,3 @@
   <script src="js/integrations.js"></script>
   <script src="js/chatbot.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const form = e.target;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      let valid = true;
-
-      form.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
-
-      if (!name) {
-        form.querySelector('[name="name"]').closest('.form-group').classList.add('error');
-        valid = false;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        form.querySelector('[name="email"]').closest('.form-group').classList.add('error');
-        valid = false;
-      }
-      if (!message) {
-        form.querySelector('[name="message"]').closest('.form-group').classList.add('error');
-        valid = false;
-      }
-
-      if (!valid) return;
-
-      const submitBtn = form.querySelector('[type="submit"]');
-      const submitText = submitBtn.querySelector('.submit-text');
-      submitText.textContent = 'Sending...';
-      submitBtn.disabled = true;
-
-      const result = await Integrations.sendContactForm({ name, email, message });
-
-      if (result.success) {
-        MindfulDay.showToast('Message sent successfully!', 'success');
-      } else {
-        MindfulDay.showToast('Message received locally. Webhook integration pending.', 'info');
-      }
-
-      form.reset();
-      submitText.textContent = 'Send Message';
-      submitBtn.disabled = false;
-    });
-  </script>
-</body>
-</html>
